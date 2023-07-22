@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+  <title>Sale List</title>
+</head>
+<body>
+<h1>Sale List</h1>
+<table>
+  <tr>
+    <th>SlNo</th>
+    <th>SalesmanID</th>
+    <th>ProdID</th>
+    <th>SalesmanName</th>
+    <th>DOS</th>
+    <th>ProdName</th>
+    <th>Price</th>
+  </tr>
+  <tr th:each="sale : ${sales}">
+    <td th:text="${sale.getSlNo()}"></td>
+    <td th:text="${sale.getSalesmanID()}"></td>
+    <td th:text="${sale.getProduct().getProdID()}"></td>
+    <td th:text="${sale.getSalesmanName()}"></td>
+    <td th:text="${sale.getDos()}"></td>
+    <td th:text="${sale.getProduct().getProdName()}"></td>
+    <td th:text="${sale.getProduct().getPrice()}"></td>
+  </tr>
+</table>
+</body>
+</html>
