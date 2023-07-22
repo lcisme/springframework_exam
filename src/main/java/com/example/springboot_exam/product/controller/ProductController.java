@@ -11,12 +11,13 @@ import java.util.List;
 
 
 @Controller
+@RequestMapping("/products")
 public class ProductController {
 
     @Autowired
     private ProductService productService;
 
-    @RequestMapping("/products")
+    @RequestMapping
     public String listProducts(Model model) {
         List<Product> products = productService.getAllProducts();
         model.addAttribute("products", products);
